@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Generador de Contraseñas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 50px;
-    }
-    #password {
-      margin-top: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #333;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-  </style>
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Generador de Contraseñas</h1>
-  <button onclick="generarContrasena()">Generar contraseña</button>
+  <h1>Password Generator</h1>
+  <div class="config">
+    <label>Number of words:
+      <input type="number" id="wordCount" value="4" min="2" max="10">
+    </label>
+  </div>
+
+  <div class="config">
+    <label>
+      <input type="checkbox" id="capitalize"> Capitalize each word
+    </label>
+  </div>
+
+  <button onclick="generatePassword()">Generate Password</button>
+
   <div id="password"></div>
 
-  <!-- Vinculamos el archivo JS externo -->
-  <script src="script.js"></script>
+  <script src="password.js"></script>
 </body>
 </html>
